@@ -83,7 +83,7 @@ a {
     top: -6px;
     left: 0;
     width: 100%;
-    height: 1px; /* Epaisseur de la barre bleue */
+    height: 2px; /* Epaisseur de la barre bleue */
     background-color: #0065FC;
     transform: scaleX(0); /* Réduisez la largeur à 0 par défaut */
     
@@ -158,7 +158,7 @@ a {
     padding: 10px 15px;
     border:2px solid #D9D9D9;
     border-radius: 30px;
-    
+    cursor: pointer;
 }
 
 .filters .fa-solid {
@@ -193,40 +193,46 @@ a {
 
 /****** Hebergements ***********/
 .hebergements {
-    width: 65%;
+    width: 63%;
 }
 
 .hebergements-title{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin-top: -20px;
+    padding-left: 5px;
+    
 }
 
 .hebergements-cards {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 1%;
 }
 
+.card {
+    flex: 0 0 calc(35% - 20px); /* 50% pour deux cartes par ligne, 20px pour l'espace autour */
+    margin: 3px; /* la moitié de l'espace autour */
+}
+
+
 .hebergements-cards a {
-    flex: 1 0 calc(30% - 1%);
+    flex: 0 0 calc(35% - 20px); /* 50% pour deux cartes par ligne, 20px pour l'espace autour */
+    margin: 3px; /* la moitié de l'espace autour */
 }
 
 .hebergements-cards img {
     width: 100%;
-    height: 120px;
+    height: 80px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
 .hebergements-cards .card-content {
-    width: 100%;
-    padding-left: 15px;
+    padding: 0 15px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     box-sizing: border-box;
+    line-height: 0.5;
+    margin-bottom: 10px;
 }
 
 
@@ -273,6 +279,44 @@ a {
 
 .populaires-cards .card-rating {
     margin-bottom: 5px;
+}
+
+/*Activités à Marseille*/
+
+.activities-title {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left:20px
+}
+
+
+.activities-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Style de la carte d'activité */
+.activities-cards .card {
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px; /* Espacement entre les cartes */
+    overflow: hidden; /* Pour cacher le débordement de l'image */
+}
+
+.activities-cards .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* Ajustez le comportement de l'image */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.activities-cards .card-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
 }
 
 
