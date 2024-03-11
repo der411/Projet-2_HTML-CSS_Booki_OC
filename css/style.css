@@ -60,7 +60,7 @@ a {
 
 /***********************************************Header******************************************/
 
-/* Header Liens*/
+/* Header Liens Nav*/
 
 .nav {
   display: flex;
@@ -129,6 +129,10 @@ a {
   text-align: center;
 }
 
+.search-input::placeholder {
+  color: black;
+}
+
 .search-button {
   background-color: #0065fc;
   color: white;
@@ -147,21 +151,32 @@ a {
   justify-content: space-between;
   width: 50%;
   margin-top: 30px;
-  gap: 20px
 }
 
 .filters button {
   background: none;
+  width: 50%;
+  font-size: 13px;
+  margin-left: 10px;
+  height: 40px;
   padding: 10px 15px;
   border: 2px solid #d9d9d9;
   border-radius: 30px;
   cursor: pointer;
-  
+}
+.filters button:hover {
+  background-color: #deebff;
+}
+
+.filters button i {
+  color: #0065fc;
 }
 
 .filters .fa-solid {
   margin-right: 10px;
 }
+
+/*Header info*/
 
 .info {
   display: flex;
@@ -169,8 +184,20 @@ a {
   justify-content: space-between;
   margin: 20px 0;
 }
+
 .info .fa-solid {
   margin-right: 10px;
+}
+
+.fa-solid.fa-info {
+  border: 1px solid #d9d9d9; /* Définit la bordure */
+  border-radius: 50%; /* Rend la bordure circulaire */
+  padding: 1px; /* Ajoute de l'espace autour de l'icône */
+  display: inline-flex; /* Nécessaire pour que padding et border-radius fonctionnent */
+  justify-content: center; /* Centre l'icône horizontalement */
+  align-items: center; /* Centre l'icône verticalement */
+  width: 30px; /* Définit la largeur */
+  height: 30px; /* Définit la hauteur */
 }
 
 /****** Hebergements And Populaires ***********/
@@ -200,17 +227,17 @@ a {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  
 }
 
 .card {
-  flex: 0 0 calc(35% - 20px); /* 50% pour deux cartes par ligne, 20px pour l'espace autour */
+  flex: 0 0 calc(35% - 20px); /* 35% pour deux cartes par ligne, 20px pour l'espace autour */
   margin: 3px; /* la moitié de l'espace autour */
 }
 
 .hebergements-cards a {
   flex: 0 0 calc(35% - 20px); /* 50% pour deux cartes par ligne, 20px pour l'espace autour */
   margin: 3px; /* la moitié de l'espace autour */
+  padding-bottom: 10px;
 }
 
 .hebergements-cards img {
@@ -221,7 +248,7 @@ a {
 }
 
 .hebergements-cards .card-content {
-  padding: 0 15px;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -234,6 +261,14 @@ a {
   justify-content: flex-start;
   margin: 20px 10px;
   font-weight: bold;
+}
+
+.hebergements h3 {
+  line-height: 1;
+}
+
+.hebergements .card-subtitle {
+  line-height: 1;
 }
 
 /****** Populaires ***********/
@@ -292,22 +327,25 @@ a {
 .activities-cards {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
 }
 
 /* Style de la carte d'activité */
 .activities-cards .card {
-  width: 250px;
+  flex: 0 0 25%; /* 25% de la largeur de .activities-cards */
+  min-width: 250px;
   border-radius: 20px;
-  margin: 10px; /* Espacement entre les cartes */
   padding: 0;
+  box-sizing: border-box; /* Pour inclure padding et border dans la largeur */
 }
 
-.activities-cards .card img {
-  width: 100%;
-  height: 300px;
+.activities-cards .card .img-container {
+  width: 100%; /* 100% de la largeur de .card */
+  height: 300px; /* Hauteur fixe */
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .activities-cards .card-title {
@@ -374,6 +412,12 @@ footer h3 {
 
   .populaires-cards .card-subtitle {
     font-size: 13px;
+  }
+
+  .filters button {
+    width: 100%; /* Ajustez la largeur pour s'adapter à l'écran */
+    font-size: 6%; /* Réduisez la taille de police si nécessaire */
+    /* Autres ajustements de style si besoin */
   }
 }
 

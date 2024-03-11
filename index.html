@@ -24,8 +24,8 @@
     <div class="main-container">
       <header>
         <div class="nav">
-          <a href="#">Hébergements</a>
-          <a href="#">Activités</a>
+          <a href="#hebergements">Hébergements</a>
+          <a href="#activites">Activités</a>
         </div>
         <div class="logo"><img src="./images/logo/Booki.png" alt="Logo du site" /></div>
 
@@ -42,24 +42,21 @@
 
         <div class="filters">
           <h3>Filtres</h3>
-          <button>
-            <i class="fa-solid fa-money-bill-wave" style="color: #0065fc"></i>Économique
-          </button>
-          <button><i class="fa-solid fa-person" style="color: #0065fc"></i>Familial</button>
-          <button><i class="fa-solid fa-heart" style="color: #0065fc"></i>Romantique</button>
-          <button><i class="fa-solid fa-fire" style="color: #0065fc"></i>Nos pépites</button>
+          <button><i class="fa-solid fa-money-bill-wave"></i>Économique</button>
+          <button><i class="fa-solid fa-person"></i>Familial</button>
+          <button><i class="fa-solid fa-heart"></i>Romantique</button>
+          <button><i class="fa-solid fa-fire"></i>Nos pépites</button>
         </div>
         <div class="info">
           <p>
-            <i class="fa-solid fa-circle-info"></i>Plus de 500 logements sont disponibles dans cette
-            ville
+            <i class="fa-solid fa-info"></i>Plus de 500 logements sont disponibles dans cette ville
           </p>
         </div>
       </header>
 
       <main>
         <div class="hebergements-and-populaires">
-          <section class="hebergements">
+          <section class="hebergements" id="hebergements">
             <div class="hebergements-title">
               <h2>Hébergements à Marseille</h2>
             </div>
@@ -276,17 +273,17 @@
           </section>
         </div>
 
-        <section class="activities">
+        <section class="activities" id="activites">
           <div class="activities-title">
             <h2 class="section-title">Activités à Marseille</h2>
           </div>
           <div class="activities-cards">
             <a href="#">
               <article class="card">
-                <img
-                  src="./images/activites/reno-laithienne.jpg"
-                  alt="Image du vieux port montrant des bateaux et le quai"
-                />
+                <div
+                  class="img-container"
+                  style="background-image: url('./images/activites/reno-laithienne.jpg')"
+                ></div>
                 <div class="card-content">
                   <div class="card-txt">
                     <h3 class="card-title">Vieux-Port</h3>
@@ -296,7 +293,10 @@
             </a>
             <a href="#">
               <article class="card">
-                <img src="./images/activites/paul-hermann.jpg" alt="Image montrant un chateau" />
+                <div
+                  class="img-container"
+                  style="background-image: url('./images/activites/paul-hermann.jpg')"
+                ></div>
                 <div class="card-content">
                   <div class="card-txt">
                     <h3 class="card-title">Fort de Pomègues</h3>
@@ -306,10 +306,11 @@
             </a>
             <a href="#">
               <article class="card">
-                <img
-                  src="./images/activites/kilyan-sockalingum.jpg"
-                  alt="Image montrant une vue de la mer depuis la montagne"
-                />
+                <div
+                  class="img-container"
+                  style="background-image: url('./images/activites/kilyan-sockalingum.jpg')"
+                ></div>
+
                 <div class="card-content">
                   <div class="card-txt">
                     <h3 class="card-title">Parc national des Calanques</h3>
@@ -319,10 +320,11 @@
             </a>
             <a href="#">
               <article class="card">
-                <img
-                  src="./images/activites/florian-wehde.jpg"
-                  alt="Image montrant les infrastuctures"
-                />
+                <div
+                  class="img-container"
+                  style="background-image: url('./images/activites/florian-wehde.jpg')"
+                ></div>
+
                 <div class="card-content">
                   <div class="card-txt">
                     <h3 class="card-title">Notre-Dame-de-la-Garde</h3>
