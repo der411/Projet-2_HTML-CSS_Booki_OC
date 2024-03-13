@@ -78,9 +78,9 @@ a {
 }
 
 .nav a::before {
-  content: ""; /* Création d'un pseudo-élément avant le lien */
+  content: ""; /* Création d'un pseudo-élément vide avant le lien */
   position: absolute;
-  top: -6px;
+  top: -8px;
   left: 0;
   width: 100%;
   height: 2px; /* Epaisseur de la barre bleue */
@@ -149,7 +149,7 @@ a {
   display: flex;
   align-items: center; /* Aligne les éléments verticalement au centre */
   justify-content: space-between;
-  width: 50%;
+  width: 70%;
   margin-top: 30px;
 }
 
@@ -213,30 +213,26 @@ a {
   box-sizing: border-box;
 }
 
-/****** Hebergements ***********/
+/************ Hebergements ***********/
 .hebergements {
   width: 63%;
+  padding: 0 30px;
 }
 
 .hebergements-title {
   margin-top: -20px;
-  padding-left: 5px;
+  padding-left: 30px;
 }
 
 .hebergements-cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
-.card {
-  flex: 0 0 calc(35% - 20px); /* 35% pour deux cartes par ligne, 20px pour l'espace autour */
-  margin: 3px; /* la moitié de l'espace autour */
-}
-
 .hebergements-cards a {
-  flex: 0 0 calc(35% - 20px); /* 50% pour deux cartes par ligne, 20px pour l'espace autour */
-  margin: 3px; /* la moitié de l'espace autour */
+  flex: 0 0 30%;
+  margin: 5px; /* la moitié de l'espace autour */
   padding-bottom: 10px;
 }
 
@@ -248,27 +244,27 @@ a {
 }
 
 .hebergements-cards .card-content {
-  padding: 0 10px;
+  padding: 0 10px; /* 0 en haut/bas et 10px droite/gauche */
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  line-height: 0.5;
+  line-height: 0.4;
   margin-bottom: 10px;
 }
 
 .hebergements-next {
   display: flex;
   justify-content: flex-start;
-  margin: 20px 10px;
+  padding:40px;
   font-weight: bold;
 }
 
 .hebergements h3 {
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .hebergements .card-subtitle {
-  line-height: 1;
+  line-height: 1.2;
 }
 
 /****** Populaires ***********/
@@ -318,41 +314,43 @@ a {
 
 /***************************Activités à Marseille****************************/
 
+/*Activités à Marseille*/
+
+.activities {
+    background-color: violet;
+}
+
 .activities-title {
-  margin-top: 50px;
-  margin-bottom: 20px;
-  margin-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left:20px
 }
 
 .activities-cards {
-  display: flex;
-  justify-content: space-around;
+    background-color: yellow;
+    display: flex;
+    justify-content: space-around;
 }
 
-/* Style de la carte d'activité */
 .activities-cards .card {
-  flex: 0 0 25%; /* 25% de la largeur de .activities-cards */
-  min-width: 250px;
-  border-radius: 20px;
-  padding: 0;
-  box-sizing: border-box; /* Pour inclure padding et border dans la largeur */
+    max-width: 280px;
+    min-width: 210px;
+    border-radius: 20px;
+    padding: 0;
+    margin: 5px; /* Espacement entre les cartes */
 }
 
-.activities-cards .card .img-container {
-  width: 100%; /* 100% de la largeur de .card */
-  height: 300px; /* Hauteur fixe */
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.activities-cards .card img {
+    width: 100%;
+    height: 400px;
+    border-top-left-radius:20px;
+    border-top-right-radius: 20px;
 }
 
 .activities-cards .card-title {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-  padding: 15px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
 }
 
 /*******************************************Footer*****************************************/
@@ -362,6 +360,7 @@ footer {
   margin-top: 40px;
   height: auto;
 }
+
 footer h3 {
   margin: 0;
 }
@@ -381,16 +380,32 @@ footer h3 {
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
+
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
   .hebergements-and-populaires {
     flex-direction: column;
   }
 
+  /*************************************Header*************************************/
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .filters h3 {
+    width: 100%;
+  }
+  .filters button {
+    width: auto;
+    margin-left: 0;
+  }
+
+  /*************************************Hébergements*************************************/
   .hebergements {
     width: 100%;
   }
 
+  /*************************************Populaires*************************************/
   .populaires {
     width: 100%;
     margin-top: 50px;
@@ -414,14 +429,20 @@ footer h3 {
     font-size: 13px;
   }
 
-  .filters button {
-    width: 100%; /* Ajustez la largeur pour s'adapter à l'écran */
-    font-size: 6%; /* Réduisez la taille de police si nécessaire */
-    /* Autres ajustements de style si besoin */
-  }
+  /*************************************Activités*************************************/
+ 
+  .activities-cards .card {
+    flex: 1 1 calc(35% - 20px);
+    max-width: 210px;
+    min-width: 100px;
+}
+  
+  .activities-cards .card img {
+    height: 250px;
+}
 }
 
-/* Small devices (phones, less than 768px) */
-@media (max-width: 767.98px) {
-  /* ... */
-}
+  /* Small devices (phones, less than 768px) */
+  @media (max-width: 767.98px) {
+    /* ... */
+  }
