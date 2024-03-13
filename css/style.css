@@ -93,6 +93,9 @@ a {
 }
 
 /* Header LOGO*/
+.logo1 {
+  display: none;
+}
 
 .logo img {
   width: 80px; /* La taille du logo */
@@ -107,7 +110,7 @@ a {
 
 /* Header Research */
 
-.research {
+.search-container {
   display: flex;
   align-items: center;
   margin-top: 40px;
@@ -123,7 +126,7 @@ a {
 
 .search-input {
   border: 1px solid #f2f2f2;
-  padding: 14px 14px;
+  padding: 14px;
   font-size: 14px;
   font-weight: bold;
   text-align: center;
@@ -141,6 +144,10 @@ a {
   border-radius: 0 15px 15px 0;
   padding: 15px 15px;
   cursor: pointer;
+}
+
+.search-button .fa-magnifying-glass {
+  display: none;
 }
 
 /* Header Filter */
@@ -255,7 +262,7 @@ a {
 .hebergements-next {
   display: flex;
   justify-content: flex-start;
-  padding:40px;
+  padding: 40px;
   font-weight: bold;
 }
 
@@ -317,40 +324,40 @@ a {
 /*Activités à Marseille*/
 
 .activities {
-    background-color: violet;
+  background-color: violet;
 }
 
 .activities-title {
-    margin-top: 50px;
-    margin-bottom: 20px;
-    margin-left:20px
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .activities-cards {
-    background-color: yellow;
-    display: flex;
-    justify-content: space-around;
+  background-color: yellow;
+  display: flex;
+  justify-content: space-around;
 }
 
 .activities-cards .card {
-    max-width: 280px;
-    min-width: 210px;
-    border-radius: 20px;
-    padding: 0;
-    margin: 5px; /* Espacement entre les cartes */
+  max-width: 280px;
+  min-width: 210px;
+  border-radius: 20px;
+  padding: 0;
+  margin: 5px; /* Espacement entre les cartes */
 }
 
 .activities-cards .card img {
-    width: 100%;
-    height: 400px;
-    border-top-left-radius:20px;
-    border-top-right-radius: 20px;
+  width: 100%;
+  height: 400px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .activities-cards .card-title {
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
 }
 
 /*******************************************Footer*****************************************/
@@ -388,9 +395,14 @@ footer h3 {
   }
 
   /*************************************Header*************************************/
+  .logo1 {
+    display: none;
+  }
+
   .filters {
     display: flex;
     flex-wrap: wrap;
+    width: 80%;
   }
   .filters h3 {
     width: 100%;
@@ -430,19 +442,131 @@ footer h3 {
   }
 
   /*************************************Activités*************************************/
- 
+
   .activities-cards .card {
     flex: 1 1 calc(35% - 20px);
     max-width: 210px;
     min-width: 100px;
-}
-  
+  }
+
   .activities-cards .card img {
     height: 250px;
-}
+  }
 }
 
-  /* Small devices (phones, less than 768px) */
-  @media (max-width: 767.98px) {
-    /* ... */
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  /*************************************Header*************************************/
+
+  /* Header LOGO*/
+  .logo {
+    display: none;
   }
+  .logo1 {
+    width: 100%;
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .logo1 img {
+    width: 120px;
+  }
+  /* Header Liens Nav*/
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+  }
+
+  .nav a {
+    text-decoration: none;
+    margin: 0 30px;
+    font-size: 28px;
+  }
+
+  /* Header Intro */
+
+  .intro {
+    line-height: 1;
+    margin-top: 60px;
+    font-size: 28px;
+  }
+
+  /* Header Research */
+  .search-container {
+    display: flex;
+    align-items: center;
+    position: relative; /* pour la position absolu */
+    border: 1px solid #f2f2f2;
+    border-radius: 20px;
+  }
+
+  .fa-location-dot {
+    font-size: 24px;
+    color: #000000;
+    background-color: #f2f2f2;
+    padding: 20px 20px;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .search-input {
+    border: none;
+    padding: 14px;
+    outline: none;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .search-button {
+    display: flex;
+    align-items: center; /* Centre l'icône de la loupe verticalement */
+    justify-content: center; /* Centre l'icône de la loupe horizontalement */
+    border: none;
+    background-color: #0065fc;
+    padding: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 20px;
+    position: absolute; /* positionne le bouton de manière absolue par rapport à son conteneur */
+    right: 0%; /* déplace le bouton vers l'extérieur du conteneur */
+    top: 50%; /* positionne le bouton au milieu verticalement */
+    color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4); /* ombre sous le bouton pour l'effet "soulevé" */
+    transform: translateY(-50%);
+    z-index: 2; /* s'assure que le bouton est au-dessus des autres éléments */
+  }
+
+  .search-button .button-text {
+    display: none; /* cache le texte sur les petits écrans */
+  }
+
+  .search-button .fa-magnifying-glass {
+    display: inline-block; /* affiche l'icône de loupe sur les petits écrans */
+    color: white;
+  }
+
+  /* Header Filter */
+
+  .filters {
+    width: 100%;
+    font-size: 28px;
+  }
+
+  .filters button {
+    width: 48%;
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+    height: 80px;
+    border-radius: 50px;
+    border: 3px solid #d9d9d9;
+  }
+
+  /*Header Info*/
+
+  .info p{
+    display: flex;
+    font-size: 28px;
+  }
+}
