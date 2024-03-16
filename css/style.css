@@ -73,9 +73,7 @@ a {
   position: relative;
 }
 
-.nav-mobile {
-  display: none; 
-}
+
 
 .nav a:hover {
   color: #0065fc; /* Couleur du texte au survol */
@@ -488,9 +486,10 @@ footer h3 {
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
   /*************************************Header*************************************/
-header{
-    padding:0 40px;
-}
+  
+  header {
+    padding: 0 40px;
+  }
   /* Header LOGO*/
   .logo {
     display: none;
@@ -501,33 +500,38 @@ header{
     margin: 40px 0;
   }
   .logo1 img {
-    width: 20%;
+    width: 15%;
   }
+
   /* Header Liens Nav*/
   .nav {
     display: none;
+  }
+
+  .main-container {
+    padding: 0 20px; /* Réduire le padding pour les petits écrans */
   }
 
   .nav-mobile {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:0 20px;
+    padding: 0 20px;
     margin-top: 50px;
   }
 
   .nav-mobile a {
-    font-size: 33px;
+    margin-left: 0; /* Réduire la marge entre les liens pour les petits écrans */
+    font-size: 4vw;
   }
 
- 
 
   /* Header Intro */
 
   .intro {
     line-height: 1;
     margin-top: 60px;
-    font-size: 28px;
+    font-size: 4vw;
   }
 
   /* Header Research */
@@ -543,29 +547,31 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 64px;
-    width: 8%;
-    font-size: 28px;
+    height: 67px;
+    width: 16%;
+    font-size: 30px;
     color: #000000;
     background-color: #f2f2f2;
     border-radius: 30px 0 0 30px;
   }
 
   .search-input {
+    width: 100%;
     border: none;
     outline: none;
-    font-size: 30px;
-    font-weight: bold;
     border-radius: 20px 0 0 20px;
     height: 49px;
   }
 
   .search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     background-color: #0065fc;
     font-size: 28px;
     cursor: pointer;
-    padding: 30px;
+    padding: 34px;
     width: 14%;
     border-radius: 30px;
     color: white;
@@ -581,17 +587,26 @@ header{
     color: white;
   }
 
+  .search-container input::placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+    font-weight: bold;
+  }
+
   /* Header Filter */
 
   .filters {
     width: 100%;
-    font-size: 28px;
+    font-size: 3vw;
+    padding: 0;
   }
 
   .filters button {
     width: 48%;
     margin: 10px 0;
-    font-size: 24px;
+    font-size: 3vw;
     font-weight: bold;
     height: 80px;
     border-radius: 50px;
@@ -609,7 +624,7 @@ header{
   .info p {
     display: flex;
     align-items: center;
-    font-size: 28px;
+    font-size: 4vw;
     margin-top: 180px;
   }
 
@@ -631,10 +646,8 @@ header{
     background-color: white !important;
   }
 
-  .hebergements-title {
-    margin-top: -20px;
-    padding-left: 5px;
-    font-size: 26px;
+  .hebergements h2 {
+    font-size: 5vw;
   }
 
   .hebergements-cards a {
@@ -643,7 +656,7 @@ header{
     width: 100%;
   }
 
-  .hebergements-cards .card{
+  .hebergements-cards .card {
     border-radius: 30px;
   }
 
@@ -653,10 +666,21 @@ header{
     border-top-right-radius: 30px;
   }
 
+  .hebergements-cards .card-title {
+    font-size: 3vw;
+  }
+  .hebergements-cards .card-subtitle {
+    font-size: 3vw;
+  }
+
+  .hebergements-cards .card-rating {
+    font-size: 3vw;
+  }
+
   .hebergements-next {
     padding: 5px;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 3vw;
   }
 
   /**************** Populaires ***************/
@@ -670,11 +694,10 @@ header{
   }
 
   .populaires {
-    order: 1; /* S'affichera en premier */  
+    order: 1; /* S'affichera en premier */
     margin-left: -8px; /* La valeur négative ici devrait être égale au padding du .main-container */
     margin-right: -8px; /* La même valeur négative ici pour le côté droit */
-    width:auto;
-    
+    width: auto;
   }
 
   .populaires-cards {
@@ -686,11 +709,8 @@ header{
     width: 100%;
   }
 
-  .populaires h2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 26px;
+  .populaires .section-title {
+    font-size: 5vw;
   }
 
   .populaires-cards .card {
@@ -700,8 +720,8 @@ header{
   }
 
   .populaires-cards img {
-    width: 28%;
-    height: 250px;
+    width: 23%;
+    height: 40vw;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
   }
@@ -713,19 +733,19 @@ header{
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
-    font-size: 20px;
+    font-size: 3vw;
   }
 
   .populaires-cards .card-title {
     margin-top: 10px;
     margin-bottom: 4px;
     padding: 10px;
-    font-size: 24px;
+    font-size: 3vw;
   }
 
   .populaires-cards .card-subtitle {
     margin: 0;
-    font-size: 22px;
+    font-size: 3vw;
     padding: 10px;
   }
 
@@ -734,6 +754,45 @@ header{
   }
 
   /***********************Activités à Marseille************************/
+
+  .activities .card {
+    border-radius: 30px;
+  }
+  .activities-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .activities .section-title {
+    font-size: 4vw;
+    padding-left: 35px;
+  }
+  .activities-cards a {
+    width: 85%;
+    margin-bottom: 20px;
+  }
+  .activities-cards .card img {
+    width: 100%;
+    height: 40vw;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+
+  .activities-cards .card-title {
+    font-size: 3vw;
+  }
+
+/**********Footer***********/
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+  }
+
+.footer-nav{
+    font-size: 3vw;
+    margin-left: 35px;
+}
 
 
 }
