@@ -61,7 +61,9 @@ a {
 /***********************************************Header******************************************/
 
 /* Header Liens Nav*/
-
+.nav-mobile {
+  display: none; /* Cache les liens pour les mobiles */
+}
 .nav {
   display: flex;
   justify-content: flex-end; /* Pour positionner les liens tout à droite */
@@ -73,10 +75,8 @@ a {
   position: relative;
 }
 
-
-
 .nav a:hover {
-  color: #0065fc; /* Couleur du texte au survol */
+  color: var(--main-color); /* Couleur du texte au survol */
 }
 
 .nav a::before {
@@ -86,7 +86,7 @@ a {
   left: 0;
   width: 100%;
   height: 2px; /* Epaisseur de la barre bleue */
-  background-color: #0065fc;
+  background-color: var(--main-color);
   transform: scaleX(0); /* Largeur de la barre à 0 */
 }
 
@@ -96,11 +96,11 @@ a {
 
 /* Header LOGO*/
 .logo1 {
-  display: none;
+  display: none; /* Cache le logo mobile pour desktop et tablette*/
 }
 
 .logo img {
-  width: 80px; /* La taille du logo */
+  width: 6%; /* Largeur du logo */
 }
 
 /* Header Intro */
@@ -113,7 +113,7 @@ a {
 /* Header Research */
 
 .search-container {
-  display: flex;
+  display: flex; /* Initialisation du conteneur Flexbox */
   align-items: center;
   margin-top: 40px;
 }
@@ -121,13 +121,13 @@ a {
 .fa-location-dot {
   font-size: 16px;
   color: #000000; /* Couleur de l'icône position*/
-  background-color: #f2f2f2;
+  background-color: var(--main-bg-color);
   padding: 15px 15px;
   border-radius: 15px 0 0 15px;
 }
 
 .search-input {
-  border: 1px solid #f2f2f2;
+  border: 1px solid var(--main-bg-color);
   padding: 14px;
   font-size: 14px;
   font-weight: bold;
@@ -139,7 +139,7 @@ a {
 }
 
 .search-button {
-  background-color: #0065fc;
+  background-color: var(--main-color);
   color: white;
   font-weight: bold;
   border: none;
@@ -149,7 +149,7 @@ a {
 }
 
 .search-button .fa-magnifying-glass {
-  display: none;
+  display: none; /* Cache l'icône de loupe sur desktop et tablette */
 }
 
 /* Header Filter */
@@ -179,11 +179,11 @@ a {
 }
 
 .filters button:hover {
-  background-color: #deebff;
+  background-color: var(--filter-bg-color);
 }
 
 .filters button i {
-  color: #0065fc;
+  color: var(--main-color);
 }
 
 .filters .fa-solid {
@@ -206,12 +206,12 @@ a {
 .fa-solid.fa-info {
   border: 1px solid #d9d9d9; /* Définit la bordure */
   border-radius: 50%; /* Rend la bordure circulaire */
-  padding: 1px; /* Ajoute de l'espace autour de l'icône */
+  padding: 1px; /* Espace autour de l'icône */
   display: inline-flex; /* Nécessaire pour que padding et border-radius fonctionnent */
-  justify-content: center; /* Centre l'icône horizontalement */
-  align-items: center; /* Centre l'icône verticalement */
-  width: 25px; /* Définit la largeur */
-  height: 25px; /* Définit la hauteur */
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
 }
 
 /****** Hebergements And Populaires ***********/
@@ -230,13 +230,11 @@ a {
 /************ Hebergements ***********/
 .hebergements {
   width: 63%;
-  padding: 0 30px;
 }
 
 .hebergements h2 {
+  margin: 0 0 20px 8px;
   font-size: 22px;
-  margin: 0;
-  padding: 0 0 30px 5px;
 }
 
 .hebergements-cards {
@@ -267,10 +265,14 @@ a {
   margin-bottom: 10px;
 }
 
+.hebergements-cards .card-txt {
+  min-height: 130px; /*Empêche la variation de hauteur des cards*/
+}
+
 .hebergements-next {
-  padding: 5px;
   font-weight: bold;
   font-size: 17px;
+  padding: 8px;
 }
 
 .hebergements h3 {
@@ -330,24 +332,31 @@ a {
 
 /*Activités à Marseille*/
 
-.activities-title {
+.activities {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
   margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.activities .activities-title h2 {
   margin-bottom: 20px;
-  margin-left: 30px;
 }
 
 .activities-cards {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+.activities-cards .card {
+  padding: 0;
 }
 
 .activities-cards a {
   width: 22%;
   border-radius: 20px;
-}
-
-.activities-cards .card {
-  padding: 0;
 }
 
 .activities-cards .card img {
@@ -370,13 +379,9 @@ a {
 /*******************************************Footer*****************************************/
 
 footer {
-  background-color: #f2f2f2;
+  background-color: var(--main-bg-color);
   margin-top: 40px;
   height: auto;
-}
-
-footer h3 {
-  margin: 0;
 }
 
 .footer-content {
@@ -389,6 +394,10 @@ footer h3 {
   flex-direction: column;
   line-height: 2;
   padding: 20px;
+}
+
+footer h3 {
+  margin: 0;
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
@@ -419,9 +428,7 @@ footer h3 {
   }
   .filters button {
     width: auto;
-    margin-left: 0;
   }
-
   .button-filters {
     margin-left: 0;
   }
@@ -452,11 +459,11 @@ footer h3 {
   }
 
   .populaires-cards a {
-    width: 30%;
+    width: 32%;
   }
 
   .populaires-cards img {
-    height: 110px;
+    height: 130px;
   }
 
   .populaires-cards .card-title {
@@ -468,9 +475,6 @@ footer h3 {
   }
 
   /*************************************Activités*************************************/
-  .activities-title {
-    margin-left: 20px;
-  }
 
   .activities .section-title {
     font-size: 20px;
@@ -486,81 +490,112 @@ footer h3 {
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
   /*************************************Header*************************************/
-  
-  header {
-    padding: 0 40px;
+  body {
+    margin: 0;
   }
+
+  .main-container {
+    padding: 0;
+  }
+
   /* Header LOGO*/
   .logo {
     display: none;
   }
+
   .logo1 {
     display: flex;
     justify-content: center;
-    margin: 40px 0;
+    margin: 50px 0;
   }
+
   .logo1 img {
-    width: 15%;
+    width: 14%;
   }
 
   /* Header Liens Nav*/
-  .nav {
-    display: none;
-  }
 
-  .main-container {
-    padding: 0 20px; /* Réduire le padding pour les petits écrans */
+  .nav {
+    display: none; /* Cache les liens pour les mobiles */
   }
 
   .nav-mobile {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    margin-top: 50px;
+    justify-content: space-around;
+    position: relative;
+    width: 100%;
   }
 
-  .nav-mobile a {
-    margin-left: 0; /* Réduire la marge entre les liens pour les petits écrans */
-    font-size: 4vw;
+  .nav-container {
+    flex: 1;
+    position: relative; /* Pour positionner la barre bleue */
   }
 
+  .nav-link {
+    position: relative;
+    font-size: 26px;
+    color: black;
+    text-decoration: none;
+    display: block; /* Rend le lien en block pour permettre le centrage de texte */
+    text-align: center; /* Centre le texte dans le bloc */
+  }
+
+  .nav-link:hover {
+    color: var(--main-color); /* Couleur du texte au survol */
+  }
+
+  .nav-bar {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%; /* La moitié de la largeur du conteneur */
+    height: 4px;
+    background-color: var(--main-bg-color); /* Couleur initiale de la barre */
+    z-index: 1;
+  }
+
+  .nav-container:hover .nav-bar {
+    width: 100%; /* Barre s'étend sur la largeur totale au survol */
+    background-color: var(--main-color); /* Couleur de la barre au survol */
+  }
 
   /* Header Intro */
 
   .intro {
     line-height: 1;
-    margin-top: 60px;
-    font-size: 4vw;
+    margin: 80px 0;
+    font-size: 24px;
+    padding: 0 25px;
   }
 
   /* Header Research */
   .search-container {
     display: flex;
     justify-content: space-between;
-    border: 1px solid #f2f2f2;
-    border-radius: 30px;
-    width: 100%;
+    border: 2px solid var(--main-bg-color);
+    border-radius: 32px;
+    width: auto;
+    margin: 0 25px;
   }
 
   .fa-location-dot {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 67px;
-    width: 16%;
+    height: 58px;
+    width: 11%;
     font-size: 30px;
     color: #000000;
-    background-color: #f2f2f2;
+    background-color: var(--main-bg-color);
     border-radius: 30px 0 0 30px;
   }
 
   .search-input {
-    width: 100%;
     border: none;
     outline: none;
     border-radius: 20px 0 0 20px;
     height: 49px;
+    width: 100%;
   }
 
   .search-button {
@@ -568,14 +603,14 @@ footer h3 {
     justify-content: center;
     align-items: center;
     border: none;
-    background-color: #0065fc;
+    background-color: var(--main-color);
     font-size: 28px;
     cursor: pointer;
-    padding: 34px;
-    width: 14%;
+    padding: 30px;
+    width: 13%;
     border-radius: 30px;
     color: white;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4); /* ombre sous le bouton pour l'effet "soulevé" */
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4); /* ombre sous le bouton */
   }
 
   .search-button .button-text {
@@ -588,43 +623,53 @@ footer h3 {
   }
 
   .search-container input::placeholder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3vw;
+    font-size: 20px;
     font-weight: bold;
   }
 
   /* Header Filter */
 
   .filters {
+    width: auto;
+    padding: 0 25px;
+  }
+
+  .filters h3 {
     width: 100%;
-    font-size: 3vw;
-    padding: 0;
+    font-size: 24px;
   }
 
   .filters button {
     width: 48%;
     margin: 10px 0;
-    font-size: 3vw;
+    font-size: 14px;
+    padding: 8px 10px;
     font-weight: bold;
-    height: 80px;
+    height: 60px;
     border-radius: 50px;
     border: 3px solid #d9d9d9;
   }
 
+  .filters .fa-solid {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
   .button-filters {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
   }
 
   /*Header Info*/
-
+  .info {
+    padding: 0 25px;
+  }
   .info p {
     display: flex;
     align-items: center;
-    font-size: 4vw;
+    font-size: 24px;
     margin-top: 180px;
   }
 
@@ -647,7 +692,7 @@ footer h3 {
   }
 
   .hebergements h2 {
-    font-size: 5vw;
+    font-size: 30px;
   }
 
   .hebergements-cards a {
@@ -667,27 +712,23 @@ footer h3 {
   }
 
   .hebergements-cards .card-title {
-    font-size: 3vw;
+    font-size: 26px;
   }
   .hebergements-cards .card-subtitle {
-    font-size: 3vw;
+    font-size: 26px;
   }
 
   .hebergements-cards .card-rating {
-    font-size: 3vw;
+    font-size: 26px;
   }
 
   .hebergements-next {
     padding: 5px;
     font-weight: bold;
-    font-size: 3vw;
+    font-size: 26px;
   }
 
   /**************** Populaires ***************/
-
-  .main-container {
-    padding: 0;
-  }
 
   .hebergements-and-populaires section {
     border-radius: 0;
@@ -695,8 +736,6 @@ footer h3 {
 
   .populaires {
     order: 1; /* S'affichera en premier */
-    margin-left: -8px; /* La valeur négative ici devrait être égale au padding du .main-container */
-    margin-right: -8px; /* La même valeur négative ici pour le côté droit */
     width: auto;
   }
 
@@ -710,7 +749,7 @@ footer h3 {
   }
 
   .populaires .section-title {
-    font-size: 5vw;
+    font-size: 30px;
   }
 
   .populaires-cards .card {
@@ -721,7 +760,7 @@ footer h3 {
 
   .populaires-cards img {
     width: 23%;
-    height: 40vw;
+    height: 250px;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
   }
@@ -733,19 +772,19 @@ footer h3 {
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
-    font-size: 3vw;
+    font-size: 26px;
   }
 
   .populaires-cards .card-title {
     margin-top: 10px;
     margin-bottom: 4px;
     padding: 10px;
-    font-size: 3vw;
+    font-size: 26px;
   }
 
   .populaires-cards .card-subtitle {
     margin: 0;
-    font-size: 3vw;
+    font-size: 26px;
     padding: 10px;
   }
 
@@ -754,45 +793,45 @@ footer h3 {
   }
 
   /***********************Activités à Marseille************************/
-
   .activities .card {
     border-radius: 30px;
   }
+
   .activities-cards {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    width: 90%;
   }
+
   .activities .section-title {
-    font-size: 4vw;
-    padding-left: 35px;
+    font-size: 28px;
+
   }
+  
   .activities-cards a {
-    width: 85%;
+    width: auto;
     margin-bottom: 20px;
   }
   .activities-cards .card img {
     width: 100%;
-    height: 40vw;
+    height: 250px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
   }
 
   .activities-cards .card-title {
-    font-size: 3vw;
+    font-size: 26px;
   }
 
-/**********Footer***********/
-.footer-content {
+  /**********Footer***********/
+  .footer-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 50%;
+    width: 100%;
   }
 
-.footer-nav{
-    font-size: 3vw;
-    margin-left: 35px;
-}
-
-
+  .footer-nav {
+    font-size: 26px;
+    margin-left: 30px;
+  }
 }
