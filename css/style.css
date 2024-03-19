@@ -73,6 +73,7 @@ a {
   text-decoration: none;
   margin-left: 60px; /* Espacement entre les liens */
   position: relative;
+  top: 7px;
 }
 
 .nav a:hover {
@@ -82,7 +83,7 @@ a {
 .nav a::before {
   content: ""; /* Création d'un pseudo-élément vide avant le lien */
   position: absolute;
-  top: -8px;
+  top: -15px;
   left: 0;
   width: 100%;
   height: 2px; /* Epaisseur de la barre bleue */
@@ -129,10 +130,11 @@ a {
 
 .fa-location-dot {
   font-size: 16px;
-  color: #000000; /* Couleur de l'icône position*/
-  background-color: var(--main-bg-color);
   padding: 15px 15px;
+  border: none;
   border-radius: 15px 0 0 15px;
+  background-color: var(--main-bg-color);
+  color: #000000; /* Couleur de l'icône position*/
 }
 
 .search-input {
@@ -350,7 +352,7 @@ a {
   margin-right: auto;
 }
 
-.activities .activities-title h2 {
+.activities .activities-title h1 {
   margin-bottom: 20px;
 }
 
@@ -524,7 +526,7 @@ footer h3 {
     margin: 50px 0;
   }
 
-  .logo1 img {
+  .logo-mobile img {
     width: 14%;
   }
 
@@ -590,7 +592,7 @@ footer h3 {
   .intro {
     line-height: 1;
     margin: 80px 0;
-    font-size: 24px;
+    font-size: 20px;
     padding: 0 25px;
   }
 
@@ -608,8 +610,8 @@ footer h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 58px;
-    width: 11%;
+    height: 90px;
+    width: 15%;
     font-size: 30px;
     color: #000000;
     background-color: var(--main-bg-color);
@@ -632,7 +634,7 @@ footer h3 {
     background-color: var(--main-color);
     font-size: 28px;
     cursor: pointer;
-    padding: 30px;
+    padding: 31px;
     width: 13%;
     border-radius: 30px;
     color: white;
@@ -649,7 +651,7 @@ footer h3 {
   }
 
   .search-container input::placeholder {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
   }
 
@@ -666,6 +668,9 @@ footer h3 {
   }
 
   .filters button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 48%;
     margin: 10px 0;
     font-size: 14px;
@@ -673,7 +678,7 @@ footer h3 {
     font-weight: bold;
     height: 60px;
     border-radius: 50px;
-    border: 3px solid #d9d9d9;
+    border: 2px solid #d9d9d9;
   }
 
   .filters .fa-solid {
@@ -692,10 +697,11 @@ footer h3 {
   .info {
     padding: 0 25px;
   }
+
   .info p {
     display: flex;
     align-items: center;
-    font-size: 24px;
+    font-size: 20px;
     margin-top: 180px;
   }
 
@@ -717,8 +723,8 @@ footer h3 {
     background-color: white !important;
   }
 
-  .hebergements h2 {
-    font-size: 30px;
+  .hebergements h1 {
+    font-size: 26px;
   }
 
   .hebergements-cards a {
@@ -738,10 +744,10 @@ footer h3 {
   }
 
   .hebergements-cards .card-title {
-    font-size: 26px;
+    font-size: 22px;
   }
   .hebergements-cards .card-subtitle {
-    font-size: 26px;
+    font-size: 22px;
   }
 
   .hebergements-cards .card-rating {
@@ -751,7 +757,7 @@ footer h3 {
   .hebergements-next {
     padding: 5px;
     font-weight: bold;
-    font-size: 26px;
+    font-size: 22px;
   }
 
   /**************** Populaires ***************/
@@ -772,10 +778,12 @@ footer h3 {
 
   .populaires-cards a {
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .populaires .section-title {
-    font-size: 30px;
+    font-size: 26px;
   }
 
   .populaires-cards .card {
@@ -785,10 +793,11 @@ footer h3 {
   }
 
   .populaires-cards img {
-    width: 23%;
-    height: 250px;
+    width: 33%;
+    height: 220px;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
+    object-fit: cover;
   }
 
   .populaires-cards .card-content {
@@ -805,12 +814,12 @@ footer h3 {
     margin-top: 10px;
     margin-bottom: 4px;
     padding: 10px;
-    font-size: 26px;
+    font-size: 22px;
   }
 
   .populaires-cards .card-subtitle {
     margin: 0;
-    font-size: 26px;
+    font-size: 22px;
     padding: 10px;
   }
 
@@ -819,23 +828,28 @@ footer h3 {
   }
 
   /***********************Activités à Marseille************************/
+  .activities{
+    width: 85%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
   .activities .card {
     border-radius: 30px;
   }
 
   .activities-cards {
     display: flex;
-    flex-direction: column;
-    width: 85%;
-    margin: 0 auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .activities .section-title {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .activities-cards a {
-    width: auto;
+    width: 100%;
     margin-bottom: 20px;
   }
   .activities-cards .card img {
@@ -846,18 +860,26 @@ footer h3 {
   }
 
   .activities-cards .card-title {
-    font-size: 26px;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    margin: 0;
+    padding-left: 30px;
   }
 
+ 
   /**********Footer***********/
   .footer-content {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 85%;
+    margin-right: auto;
+    margin-left:auto;
   }
 
   .footer-nav {
     font-size: 26px;
-    margin-left: 30px;
+    margin:0;
+    padding:0;
   }
 }

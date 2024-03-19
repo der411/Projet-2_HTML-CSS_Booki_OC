@@ -45,13 +45,21 @@
           <p>En plein centre-ville ou en pleine nature</p>
         </div>
 
-        <div class="search-container">
-          <i class="fa-solid fa-location-dot" style="color: #000000"></i>
-          <input type="text" class="search-input" placeholder="Marseille, France" />
-          <button class="search-button">
-            <span class="button-text">Rechercher</span> <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
+        <form action="#">
+          <div class="search-container">
+            <i class="fa-solid fa-location-dot"></i>
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Marseille, France"
+              aria-label="Rechercher des hébergements"
+            />
+            <button type="submit" class="search-button" aria-label="Rechercher">
+              <span class="button-text">Rechercher</span>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </form>
 
         <div class="filters">
           <h3>Filtres</h3>
@@ -73,7 +81,7 @@
         <div class="hebergements-and-populaires">
           <section class="hebergements" id="hebergements">
             <div class="section-title">
-              <h2>Hébergements à Marseille</h2>
+              <h1>Hébergements à Marseille</h1>
             </div>
 
             <div class="hebergements-cards">
@@ -216,7 +224,7 @@
 
           <section class="populaires">
             <div class="populaires-title">
-              <h2 class="section-title">Les plus populaires</h2>
+              <h1 class="section-title">Les plus populaires</h1>
               <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
             </div>
             <div class="populaires-cards">
@@ -292,7 +300,7 @@
 
         <section class="activities" id="activites">
           <div class="activities-title">
-            <h2 class="section-title">Activités à Marseille</h2>
+            <h1 class="section-title">Activités à Marseille</h1>
           </div>
 
           <div class="activities-cards">
