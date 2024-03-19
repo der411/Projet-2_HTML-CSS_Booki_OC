@@ -69,7 +69,7 @@ a {
   justify-content: flex-end; /* Pour positionner les liens tout à droite */
 }
 
-.nav a {
+.nav .a {
   text-decoration: none;
   margin-left: 60px; /* Espacement entre les liens */
   position: relative;
@@ -95,8 +95,17 @@ a {
 }
 
 /* Header LOGO*/
-.logo1 {
-  display: none; /* Cache le logo mobile pour desktop et tablette*/
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
+.logo-container {
+  order: 2;
+}
+
+.nav {
+  order: 1;
 }
 
 .logo img {
@@ -490,6 +499,12 @@ footer h3 {
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
   /*************************************Header*************************************/
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
   }
@@ -503,7 +518,7 @@ footer h3 {
     display: none;
   }
 
-  .logo1 {
+  .logo-mobile {
     display: flex;
     justify-content: center;
     margin: 50px 0;
@@ -515,15 +530,26 @@ footer h3 {
 
   /* Header Liens Nav*/
 
-  .nav {
+  .nav,
+  .nav .a:hover::before {
     display: none; /* Cache les liens pour les mobiles */
+  }
+
+  .nav .a {
+    margin-left: 0;
+  }
+
+  .logo-container {
+    order: 1; /* Le logo vient après la navigation par défaut */
+  }
+
+  .nav {
+    order: 2;
   }
 
   .nav-mobile {
     display: flex;
-    justify-content: space-around;
     position: relative;
-    width: 100%;
   }
 
   .nav-container {
@@ -618,7 +644,7 @@ footer h3 {
   }
 
   .search-button .fa-magnifying-glass {
-    display: inline-block; /* affiche l'icône de loupe sur les petits écrans */
+    display: inline-block; /* affiche l'icône de loupe sur les mobiles */
     color: white;
   }
 
@@ -800,14 +826,14 @@ footer h3 {
   .activities-cards {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 85%;
+    margin: 0 auto;
   }
 
   .activities .section-title {
     font-size: 28px;
-
   }
-  
+
   .activities-cards a {
     width: auto;
     margin-bottom: 20px;
