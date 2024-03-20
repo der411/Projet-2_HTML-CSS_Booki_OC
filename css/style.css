@@ -793,8 +793,10 @@ footer h3 {
   }
 
   .populaires-cards img {
-    width: 33%;
+    width: 25%;
+    
     height: 220px;
+    min-height: 260px;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     object-fit: cover;
