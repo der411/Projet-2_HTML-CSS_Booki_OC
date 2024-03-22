@@ -240,11 +240,15 @@ a {
 
 /************ Hebergements ***********/
 .hebergements {
+    display: flex;
+    flex-direction: column;
+   
   width: 63%;
 }
 
-.hebergements h2 {
-  margin: 0 0 20px 8px;
+.hebergements h1 {
+  margin:0;
+  padding-left: 5px;
   font-size: 22px;
 }
 
@@ -258,6 +262,7 @@ a {
 .hebergements-cards a {
   width: 30%;
   margin-bottom: 10px;
+  margin-top:30px
 }
 
 .hebergements-cards img {
@@ -449,7 +454,7 @@ footer h3 {
     width: 100%;
   }
 
-  .hebergements h2 {
+  .hebergements h1 {
     font-size: 20px;
   }
 
