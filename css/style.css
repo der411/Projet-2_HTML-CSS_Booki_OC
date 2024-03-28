@@ -102,7 +102,7 @@ a {
   flex-direction: column;
 }
 
-.logo-container {
+.logo {
   order: 2;
 }
 
@@ -246,20 +246,17 @@ a {
   width: 63%;
 }
 
-.hebergements-title .section-title {
-  padding-left: 5px;
-}
-
 .hebergements-cards {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
+  
+  margin:0;
+  padding: 0;
 }
 
 .hebergements-cards a {
   width: 30%;
-  margin-bottom: 10px;
   margin-top: 30px;
 }
 
@@ -426,10 +423,7 @@ footer h3 {
 
   /*************************************Header*************************************/
 
-  /*Header Logo*/
-  .logo1 {
-    display: none;
-  }
+  /*Header Intro*/
 
   .intro {
     line-height: 1;
@@ -508,12 +502,10 @@ footer h3 {
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
   /*************************************Header*************************************/
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     box-sizing: border-box;
   }
-
+  
   body {
     margin: 0;
   }
@@ -548,7 +540,7 @@ footer h3 {
     margin-left: 0;
   }
 
-  .logo-container {
+  .logo-mobile {
     order: 1; /* Le logo vient après la navigation par défaut */
   }
 
@@ -657,9 +649,10 @@ footer h3 {
     color: white;
   }
 
-  .search-container input::placeholder {
+  .search-container .search-input {
     font-size: 22px;
     font-weight: bold;
+    padding:0;
   }
 
   /* Header Filter */
