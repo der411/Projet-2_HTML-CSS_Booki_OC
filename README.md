@@ -1,8 +1,10 @@
+# Booki, agence immobilière ![CSS](https://img.shields.io/badge/-CSS-1572B6?logo=css3&logoColor=white) ![HTML](https://img.shields.io/badge/-HTML-E34F26?logo=html5&logoColor=white)
+
 Ce projet consiste à développer la page d'un site Internet pour permettre aux usagers de trouver des hébergements et des activités dans la ville de leur choix.
 
 # Aperçu
 ![Aperçu de la page](https://live.staticflickr.com/65535/53899929404_49a6aff123_n.jpg)
-
+  - <a href="https://der411.github.io/Projet-2_HTML-CSS_Booki_OC/" target="_blank">Visitez le site déployé</a>
 # Installation
 - Télécharger le fichier ZIP du projet depuis le dépôt GitHub.
 - Extraire les fichiers de l'archive ZIP sur votre ordinateur.
